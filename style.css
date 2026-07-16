@@ -1,0 +1,259 @@
+/* VARIABLES & ROOT ANIMATIONS */
+:root {
+    --bg-main: #060913;        
+    --bg-card: rgba(19, 26, 42, 0.6); 
+    --text-primary: #ffffff;
+    --text-muted: #b4bece;     /* Crisp Silver for perfect dark background readability */
+    --accent: #00f2fe;         
+    --accent-dim: rgba(0, 242, 254, 0.05);
+    --border-color: #141f36;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+.text-mono { font-family: 'JetBrains Mono', monospace; }
+.text-accent { color: var(--accent); }
+.bg-darker { background-color: #03050a; }
+
+/* AMBIENT BACKGROUND GLOWS */
+@keyframes floatGlow1 {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(60px, 40px) rotate(180deg); }
+    100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+@keyframes floatGlow2 {
+    0% { transform: translate(0px, 0px) rotate(360deg); }
+    50% { transform: translate(-5px, -60px) rotate(180deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.ambient-glow-1 {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+    z-index: -2;
+    filter: blur(80px);
+    animation: floatGlow1 25s infinite alternate linear;
+    pointer-events: none;
+}
+
+.ambient-glow-2 {
+    position: fixed;
+    bottom: 10%;
+    right: -10%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+    z-index: -2;
+    filter: blur(100px);
+    animation: floatGlow2 30s infinite alternate linear;
+    pointer-events: none;
+}
+
+.grid-overlay {
+    position: fixed;
+    top:0; left:0; width:100vw; height:100vh;
+    background-image: linear-gradient(rgba(20,31,54,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(20,31,54,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(6, 9, 19, 0.8) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+.nav-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted) !important;
+    margin-left: 1.5rem;
+    transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--accent) !important; }
+
+/* HERO CONFIGURATION */
+.hero-section { min-height: 85vh; }
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-muted) !important;
+    max-width: 720px;
+}
+
+/* CONTAINER MODULES */
+.section-title { font-size: 1.6rem; font-weight: 600; color: #fff; }
+.title-line { height: 1px; background-color: var(--border-color); }
+
+.skill-box {
+    background: var(--bg-card);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    height: 100%;
+}
+
+/* DEV CARDS */
+.dev-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dev-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background: rgba(19, 26, 42, 0.8);
+}
+.card-header-accent {
+    height: 2px; width: 100%;
+    background: linear-gradient(90deg, var(--accent), transparent);
+}
+.dev-card-body { padding: 2rem; display: flex; flex-direction: column; height: 100%; }
+.project-title { font-size: 1.3rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+
+/* CRITICAL TEXT CONTRAST FORCE */
+.project-desc { 
+    font-size: 0.95rem; 
+    color: var(--text-muted) !important; 
+    line-height: 1.6; 
+}
+
+/* SKILLS BADGES */
+.tech-stack-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tech-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    background-color: rgba(30, 41, 59, 0.5);
+    color: #cbd5e1;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* LINKS AND ACTIONS */
+.link-dev {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 1.25rem;
+}
+.disabled-link { color: #223049; pointer-events: none; }
+
+/* EDUCATION LINE & LOGO */
+.edu-timeline { border-left: 2px solid var(--border-color); padding-left: 2rem; margin-left: 0.5rem; }
+.edu-item { position: relative; }
+.edu-item::before {
+    content: ''; position: absolute; left: calc(-2rem - 7px); top: 6px;
+    width: 12px; height: 12px; border-radius: 50%; background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+.edu-badge { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.25rem; }
+.edu-title { font-size: 1.2rem; font-weight: 600; color: #fff; }
+.ucp-logo-container img {
+    max-width: 45px;
+    max-height: 45px;
+}
+
+/* VIDEO LAYOUT */
+.video-mockup-container {
+    background-color: #111625;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.mockup-header { height: 35px; background-color: #0b0f19; border-bottom: 1px solid var(--border-color); }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot.red { background-color: #ef4444; }
+.dot.yellow { background-color: #f59e0b; }
+.dot.green { background-color: #10b981; }
+.mockup-title { font-size: 0.75rem; }
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eef2f5;
+    padding: 24px;
+    height: 100%;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: #dee2e6;
+  }
+  .tech-badge {
+    background-color: #f1f3f5;
+    color: #495057;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .action-btn {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .action-btn:hover {
+    text-decoration: underline;
+  }
+/* Aapke project card ki base class */
+.project-card {
+  /* ... aapki baqi styling ... */
+  
+  /* Transition ko smooth chalane ke liye */
+  will-change: transform, box-shadow;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Jab mouse card ke upar aaye (Hover state) */
+.project-card:hover {
+  transform: translateY(-6px); /* Card halka sa upar uthega */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important; /* Shadow thodi depth degi */
+}
+
+/* BUTTON SYSTEMS */
+.btn-custom-primary {
+    background-color: var(--accent); color: var(--bg-main);
+    font-weight: 600; font-size: 0.9rem; padding: 0.7rem 1.4rem; border-radius: 6px; border: none;
+}
+.btn-custom-secondary {
+    background-color: transparent; color: var(--accent);
+    border: 1px solid var(--accent); font-size: 0.9rem; padding: 0.7rem 1.4rem; border-radius: 6px;
+}
+.leading-relaxed { line-height: 1.75; }
