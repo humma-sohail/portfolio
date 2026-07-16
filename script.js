@@ -1,4 +1,3 @@
-// Initialize AOS with continuous execution parameters
 document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
         duration: 800,           // Speed of animation
@@ -8,4 +7,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-console.log("%c👋 Systems Recalibrated. High-Contrast & Infinite Transitions Active.", "color: #00f2fe; font-size: 14px; font-weight: bold;");
+console.log("%c👋 Editor theme loaded: light-paper / emerald.", "color: #0F6B4C; font-size: 14px; font-weight: bold;");

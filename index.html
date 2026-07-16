@@ -29,35 +29,75 @@
     <div class="ambient-glow-2"></div>
     <div class="grid-overlay"></div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- =========================
+     NAVBAR
+========================= -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a class="navbar-brand text-mono" href="#"
-          >humma<span class="text-accent">.sohail()</span></a
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          Humma <span class="text-accent">Sohail</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
         >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
         <div
-          class="navbar-nav ms-auto d-flex flex-row flex-wrap justify-content-end"
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
         >
-          <a class="nav-link px-2" href="#about">/about</a>
-          <a class="nav-link px-2" href="#spectrum">/skills</a>
-          <a class="nav-link px-2" href="#projects">/projects</a>
-          <a class="nav-link px-2" href="#education">/education</a>
-          <a class="nav-link px-2" href="#contact">/contact</a>
-          <!-- Social Links with smooth hover transitions -->
-          <a
-            class="nav-link px-2 text-accent"
-            href="https://www.linkedin.com/in/humma-sohail-80272130b/"
-            target="_blank"
-            style="transition: all 0.2s ease"
-            >[ln]</a
-          >
-          <a
-            class="nav-link px-2 text-accent"
-            href="https://github.com/Humma123"
-            target="_blank"
-            style="transition: all 0.2s ease"
-            >[gh]</a
-          >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#spectrum">Skills</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+
+            <!-- LinkedIn -->
+            <li class="nav-item ms-lg-3">
+              <a
+                class="nav-link social-link"
+                href="https://www.linkedin.com/in/humma-sohail-80272130b/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+
+            <!-- GitHub -->
+            <li class="nav-item">
+              <a
+                class="nav-link social-link"
+                href="https://github.com/Humma123"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -65,28 +105,28 @@
     <!-- HERO SECTION -->
     <header class="hero-section d-flex align-items-center position-relative">
       <div class="container" data-aos="fade-up" data-aos-duration="1000">
-        <p class="text-accent text-mono mb-2">
-          // Active System Initialization
-        </p>
+        <p class="text-accent text-mono mb-2">// currently open to work</p>
         <h1 class="hero-title">
-          Building scalable web architecture & secure backend solutions.
+          I build scalable backend logic and integrate responsive client-side
+          applications.
         </h1>
         <p class="hero-subtitle mt-4">
-          I am <span class="text-white fw-semibold">Humma Sohail</span>. A Full
-          Stack Software Engineer specializing in bridging high-fidelity
-          interfaces with robust, logic-driven systems.
+          I'm <span class="text-white fw-semibold">Humma Sohail</span>, a full
+          stack software engineer. I like projects where the backend logic is
+          just as interesting as the interface, and I try to keep both sides
+          clean and easy to reason about.
         </p>
         <div class="mt-5">
           <a href="#projects" class="btn btn-custom-primary me-3"
             >Explore Projects</a
           >
-          <a 
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Regarding%20EdBridge%20/%20Portfolio%20Inquiry" 
-  target="_blank"
-  class="btn btn-custom-secondary text-mono"
->
-  get_in_touch()
-</a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Regarding%20EdBridge%20/%20Portfolio%20Inquiry"
+            target="_blank"
+            class="btn btn-custom-secondary text-mono"
+          >
+            get_in_touch()
+          </a>
         </div>
       </div>
     </header>
@@ -101,19 +141,19 @@
         <div class="row">
           <div class="col-lg-9">
             <p class="project-desc leading-relaxed">
-              Computer Science Graduate from the University of Central Punjab,
-              enthusiastic about turning complex logic into practical,
-              user-focused digital solutions. Having recently completed my final
-              examinations, I am fully focused on transitioning into full-time
-              roles as a
+              I studied Computer Science at the University of Central Punjab and
+              recently wrapped up my final exams. I'm now looking for
               <span class="text-white fw-semibold"
-                >Full Stack Software Engineer</span
-              >.
+                >full stack software engineer</span
+              >
+              roles where I can keep working across the whole stack instead of
+              just one layer of it.
             </p>
             <p class="project-desc leading-relaxed mt-3">
-              My development philosophy anchors on structural data security and
-              seamless UI lifecycle management. From scaling REST endpoints to
-              maintaining data sanity, I enjoy solving deep engineering puzzles.
+              I care about how data moves through a system — from schema design
+              and query performance up to how it eventually shows up on
+              someone's screen. Most of my projects start with that question,
+              and the UI follows from there.
             </p>
           </div>
         </div>
@@ -338,9 +378,10 @@
               <div class="dev-card-body">
                 <h3 class="project-title">EdBridgeLearn</h3>
                 <p class="project-desc">
-                  An intelligent recommendation engine and logic-based decision
-                  support system engineered for international academic tracking.
-                  Implemented with resilient sessions and JWT authentication.
+                  A recommendation system for tracking international academic
+                  programs and matching students to the right ones. Handles
+                  session-based auth and the matching logic on a Node/MongoDB
+                  backend.
                 </p>
                 <div class="tech-stack-list mb-4">
                   <span class="tech-tag">JavaScript</span
@@ -367,9 +408,9 @@
               <div class="dev-card-body">
                 <h3 class="project-title">Image Prediction</h3>
                 <p class="project-desc">
-                  A computational web utility integrating a client interface
-                  with server-side inference engines using core machine learning
-                  logic algorithms to parse image data input.
+                  A small web app that sends an uploaded image to a Flask-served
+                  ML model and returns a prediction. Built mostly to understand
+                  how the client and the inference server talk to each other.
                 </p>
                 <div class="tech-stack-list mb-4">
                   <span class="tech-tag">Python</span
@@ -393,14 +434,14 @@
               <div class="dev-card-body">
                 <h3 class="project-title">Simon Game Engine</h3>
                 <p class="project-desc">
-                  An asynchronous, event-driven browser execution environment
-                  testing algorithmic state tracking, dynamic array evaluations,
-                  and DOM manipulation processes.
+                  A browser version of the classic memory game — built without a
+                  framework, mostly as an exercise in state tracking, timing,
+                  and keeping the DOM in sync.
                 </p>
                 <div class="tech-stack-list mb-4">
-                  <span class="tech-tag">Vanilla JS</span
+                  <span class="tech-tag">JS</span
                   ><span class="tech-tag">jQuery</span
-                  ><span class="tech-tag">Algorithms</span>
+                  ><span class="tech-tag">CSS Transitions</span>
                 </div>
                 <div class="card-action-links mt-auto">
                   <a href="#" class="link-dev">launch_app</a>
@@ -443,8 +484,9 @@
             </div>
 
             <p class="project-desc text-sm mt-2">
-              Focused on software engineering principles, distributed systems,
-              core logic development, and advanced cloud systems mapping.
+              Covered software engineering fundamentals, databases, and systems
+              design, alongside a fair amount of independent project work along
+              the way.
             </p>
           </div>
         </div>
@@ -481,18 +523,18 @@
                 <span
                   class="badge text-mono"
                   style="
-                    background: rgba(0, 119, 181, 0.1);
-                    color: #0077b5;
-                    border: 1px solid rgba(0, 119, 181, 0.2);
+                    background: rgba(0, 119, 181, 0.08);
+                    color: #0a5f8c;
+                    border: 1px solid rgba(0, 119, 181, 0.25);
                   "
                   >ACTIVE</span
                 >
               </div>
               <h3 class="h4 text-white mb-2">LinkedIn Network</h3>
               <p class="project-desc mb-4" style="font-size: 0.9rem">
-                Join my professional circle where I actively share cloud
-                infrastructure mappings, backend architectural insights, and
-                upcoming development milestone documentations.
+                Where I post about what I'm building, share progress on
+                projects, and connect with other engineers. Feel free to say
+                hello.
               </p>
               <div class="mt-auto">
                 <a
@@ -501,7 +543,7 @@
                   class="btn btn-custom-secondary text-mono w-100 text-center py-2"
                   style="
                     font-size: 0.85rem;
-                    border-color: rgba(0, 242, 254, 0.4);
+                    border-color: rgba(15, 107, 76, 0.4);
                   "
                 >
                   network.engage() ↗
@@ -530,18 +572,17 @@
                 <span
                   class="badge text-mono"
                   style="
-                    background: rgba(255, 255, 255, 0.05);
-                    color: #cbd5e1;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    background: rgba(15, 30, 23, 0.05);
+                    color: #3f4d46;
+                    border: 1px solid rgba(15, 30, 23, 0.12);
                   "
                   >PUBLIC</span
                 >
               </div>
               <h3 class="h4 text-white mb-2">GitHub Repositories</h3>
               <p class="project-desc mb-4" style="font-size: 0.9rem">
-                Explore my core source files, computational prediction model
-                servers, and logic engines. Complete Version Control profiles
-                and logic commits are updated routinely.
+                My code lives here — project source, small experiments, and the
+                occasional work-in-progress. Updated as I build.
               </p>
               <div class="mt-auto">
                 <a
@@ -550,7 +591,7 @@
                   class="btn btn-custom-secondary text-mono w-100 text-center py-2"
                   style="
                     font-size: 0.85rem;
-                    border-color: rgba(0, 242, 254, 0.4);
+                    border-color: rgba(15, 107, 76, 0.4);
                   "
                 >
                   repository.fork() ↗
@@ -572,20 +613,20 @@
           <div class="col-lg-6 mb-4 mb-lg-0">
             <h2 class="section-title mb-3">05. Connect</h2>
             <p class="project-desc">
-              Inquiries regarding full-stack software positions or technical
-              execution frameworks are highly welcome.
+              Open to full stack roles, freelance work, or just a good technical
+              conversation. Reach out anytime.
             </p>
           </div>
           <div
             class="col-lg-6 text-start text-lg-end d-flex flex-column justify-content-center align-items-lg-end mt-3 mt-lg-0"
           >
-            <a 
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Portfolio%20Inquiry" 
-  target="_blank"
-  class="btn btn-custom-primary text-mono w-sm-100"
->
-  sys.contact("hummasohail4@gmail.com")
-</a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Portfolio%20Inquiry"
+              target="_blank"
+              class="btn btn-custom-primary text-mono w-sm-100"
+            >
+              sys.contact("hummasohail4@gmail.com")
+            </a>
           </div>
         </div>
       </div>
