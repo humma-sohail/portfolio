@@ -287,8 +287,8 @@ a:hover{ color:var(--accent); }
 .profile-photo-frame{
   /* scales with viewport height so short/unmaximized windows never push
      the name/role/socials below the row's own bottom edge */
-  width:clamp(160px, 30vh, 340px);
-  height:clamp(160px, 30vh, 340px);
+  width:clamp(200px, 38vh, 460px);
+  height:clamp(200px, 38vh, 460px);
   display:flex;
   align-items:center;
   justify-content:center;
