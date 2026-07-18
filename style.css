@@ -60,12 +60,6 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* ---------------- SCROLLBAR ---------------- */
-::-webkit-scrollbar{ width:10px; }
-::-webkit-scrollbar-track{ background:var(--bg-soft); }
-::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:50px; }
-::-webkit-scrollbar-thumb:hover{ background:var(--accent-deep); }
-
 ::selection{ background:var(--accent); color:var(--accent-ink); }
 
 button:focus-visible,
