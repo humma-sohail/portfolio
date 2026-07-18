@@ -174,8 +174,8 @@ a:hover{ color:var(--accent); }
   min-height:100vh;
   display:flex;
   align-items:center;
-  padding-top:110px;
-  padding-bottom:60px;
+  padding-top:clamp(48px, 9vh, 110px);
+  padding-bottom:clamp(32px, 6vh, 60px);
   overflow:hidden;
   background:radial-gradient(ellipse 90% 65% at 50% 25%, #234a26 0%, #12291a 55%, var(--bg) 100%);
 }
@@ -285,8 +285,10 @@ a:hover{ color:var(--accent); }
 
 /* ---------------- HERO PROFILE CARD ---------------- */
 .profile-photo-frame{
-  width:340px;
-  height:340px;
+  /* scales with viewport height so short/unmaximized windows never push
+     the name/role/socials below the row's own bottom edge */
+  width:clamp(160px, 30vh, 340px);
+  height:clamp(160px, 30vh, 340px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -302,15 +304,15 @@ a:hover{ color:var(--accent); }
 .profile-name{
   font-family:'Playfair Display', serif;
   font-weight:800;
-  font-size:2.1rem;
+  font-size:clamp(1.5rem, 3.4vh, 2.1rem);
   color:var(--ink);
-  margin-top:24px;
+  margin-top:clamp(10px, 2.2vh, 24px);
   margin-bottom:4px;
   letter-spacing:-.3px;
 }
 
 .profile-role{ color:var(--accent); font-weight:700; font-size:1.05rem; margin-bottom:2px; }
-.profile-org{ color:var(--text-muted); font-size:.95rem; margin-bottom:22px; }
+.profile-org{ color:var(--text-muted); font-size:.95rem; margin-bottom:clamp(10px, 2vh, 22px); }
 
 /* ---------------- PROFESSIONAL SUMMARY ---------------- */
 .section-icon-circle{
