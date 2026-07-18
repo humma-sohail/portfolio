@@ -169,6 +169,41 @@ a:hover{ color:var(--accent); }
 /* ---------------- CONTAINER ---------------- */
 .container{ max-width:1200px; padding-left:24px; padding-right:24px; }
 
+/* ---------------- NAVBAR ---------------- */
+.navbar{
+  padding:18px 0;
+  background:rgba(8,18,9,.6);
+  border-bottom:1px solid var(--dark-border);
+}
+
+.navbar-brand{
+  font-family:'Inter',sans-serif;
+  font-size:1.15rem;
+  font-weight:900;
+  color:var(--ink);
+  letter-spacing:-.4px;
+  text-transform:uppercase;
+}
+
+.nav-social-links{ gap:10px; }
+.nav-icon-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  color:var(--accent);
+  opacity:.85;
+  transition:.2s;
+}
+.nav-icon-link:hover{
+  color:var(--accent-ink);
+  background:var(--accent);
+  opacity:1;
+  transform:translateY(-2px);
+}
+
 /* ---------------- HERO ---------------- */
 .hero-section{
   min-height:100vh;
