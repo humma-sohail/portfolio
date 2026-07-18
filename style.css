@@ -297,9 +297,11 @@ a:hover{ color:var(--accent); }
   overflow:hidden;
 }
 .profile-photo-frame img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  /* shrunk below the circle's inscribed-square limit so the art (hair bun
+     included) never gets clipped by the round mask */
+  width:74%;
+  height:74%;
+  object-fit:contain;
   border-radius:50%;
 }
 
