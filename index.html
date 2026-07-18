@@ -21,6 +21,11 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <!-- Devicon: brand-colored language/tool logos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -28,65 +33,6 @@
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
     <div class="grid-overlay"></div>
-
-    <!-- =========================
-     NAVBAR
-========================= -->
-
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          Humma <span class="text-accent">Sohail</span>
-        </a>
-
-        <!-- Mobile Toggle -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu -->
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav align-items-center">
-            <!-- LinkedIn -->
-            <li class="nav-item ms-lg-3">
-              <a
-                class="nav-icon-link"
-                href="https://www.linkedin.com/in/humma-sohail-80272130b/"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
-                </svg>
-              </a>
-            </li>
-
-            <!-- GitHub -->
-            <li class="nav-item">
-              <a
-                class="nav-icon-link"
-                href="https://github.com/Humma123"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
     <!-- HERO SECTION -->
     <header class="hero-section position-relative">
@@ -159,6 +105,61 @@
         </div>
       </div>
     </header>
+
+    <!-- TECH LOGO MARQUEE -->
+    <section class="position-relative" style="padding: 50px 0">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <span class="eyebrow-pill">+ Tech Stack</span>
+          <h2 class="section-title mb-0" style="font-size: 1.3rem">
+            Languages &amp; Tools
+          </h2>
+          <div class="title-line ms-4 flex-grow-1"></div>
+        </div>
+      </div>
+
+      <div class="tech-marquee">
+        <div class="tech-marquee-track">
+          <!-- set 1 -->
+          <div class="tech-chip"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="tech-chip"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="tech-chip"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="tech-chip"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+          <div class="tech-chip"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+          <div class="tech-chip"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="tech-chip"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="tech-chip"><i class="devicon-express-original"></i><span>Express.js</span></div>
+          <div class="tech-chip"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+          <div class="tech-chip"><i class="devicon-jquery-plain colored"></i><span>jQuery</span></div>
+          <div class="tech-chip">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/>
+              <path d="M12 6.5v4M12 10.5 6.3 16M12 10.5 17.7 16"/>
+            </svg>
+            <span>DOM</span>
+          </div>
+
+          <!-- set 2 (exact duplicate for a seamless loop) -->
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-express-original"></i><span>Express.js</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+          <div class="tech-chip" aria-hidden="true"><i class="devicon-jquery-plain colored"></i><span>jQuery</span></div>
+          <div class="tech-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/>
+              <path d="M12 6.5v4M12 10.5 6.3 16M12 10.5 17.7 16"/>
+            </svg>
+            <span>DOM</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SKILLS SECTION -->
     <!-- TECH SPECTRUM SECTION -->

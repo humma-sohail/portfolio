@@ -103,7 +103,7 @@ input:focus-visible{
 .ambient-glow-2{ bottom:8%; left:-180px; background:radial-gradient(circle, rgba(198,226,101,.20), transparent 70%); }
 
 /* Ensure real content sits above the ambient layers */
-.navbar, header, section, footer{ position:relative; z-index:1; }
+header, section, footer{ position:relative; z-index:1; }
 
 /* ---------------- TYPOGRAPHY ---------------- */
 h1,h2,h3,h4,h5,h6{ font-weight:700; color:var(--ink); }
@@ -168,53 +168,6 @@ a:hover{ color:var(--accent); }
 
 /* ---------------- CONTAINER ---------------- */
 .container{ max-width:1200px; padding-left:24px; padding-right:24px; }
-
-/* ---------------- NAVBAR ---------------- */
-.navbar{
-  background:rgba(8,18,9,.82) !important;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--dark-border);
-  padding:18px 0;
-}
-
-.navbar-brand{
-  font-family:'Inter',sans-serif;
-  font-size:1.15rem;
-  font-weight:900;
-  color:var(--accent) !important;
-  letter-spacing:-.4px;
-  text-transform:uppercase;
-}
-
-.nav-link{
-  color:var(--accent) !important;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.85rem;
-  margin-left:24px;
-  font-weight:500;
-  opacity:.85;
-}
-.nav-link:hover{ color:var(--dark-text) !important; opacity:1; }
-
-.nav-icon-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:36px;
-  height:36px;
-  margin-left:12px;
-  border-radius:50%;
-  color:var(--accent);
-  opacity:.85;
-  transition:.25s;
-}
-.nav-icon-link:hover{
-  color:var(--accent-ink);
-  background:var(--accent);
-  opacity:1;
-  transform:translateY(-2px);
-}
 
 /* ---------------- HERO ---------------- */
 .hero-section{
@@ -281,6 +234,53 @@ a:hover{ color:var(--accent); }
 
 @media (prefers-reduced-motion:reduce){
   .hero-smoke span{ animation:none !important; }
+}
+
+/* ---------------- TECH LOGO MARQUEE ---------------- */
+.tech-marquee{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.tech-marquee-track{
+  display:flex;
+  gap:18px;
+  width:max-content;
+  animation:tech-marquee-scroll 26s linear infinite;
+}
+.tech-marquee:hover .tech-marquee-track{ animation-play-state:paused; }
+
+@keyframes tech-marquee-scroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+.tech-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+  background:var(--surface);
+  border:1px solid var(--dark-border);
+  padding:12px 20px;
+  border-radius:50px;
+  white-space:nowrap;
+  transition:.25s;
+}
+.tech-chip:hover{ border-color:var(--accent); background:var(--surface-hover); }
+.tech-chip i{ font-size:1.5rem; line-height:1; }
+.tech-chip svg{ color:var(--accent); flex:0 0 auto; }
+.tech-chip span{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--ink);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .tech-marquee-track{ animation:none; }
+  .tech-marquee{ overflow-x:auto; }
 }
 
 /* ---------------- HERO PROFILE CARD ---------------- */
@@ -842,10 +842,9 @@ footer p{ color:var(--text-faint); font-size:14px; margin:0; }
    RESPONSIVE
 ========================================================== */
 @media (max-width:992px){
-  .hero-section{ padding-top:130px; padding-bottom:60px; }
+  .hero-section{ padding-top:60px; padding-bottom:60px; }
   .hero-summary-text{ margin:auto; margin-bottom:10px; }
   .section-title{ font-size:1.5rem; }
-  .nav-link{ margin-left:16px; }
   .dark-panel{ padding:48px 24px; border-radius:24px; }
 }
 
@@ -859,7 +858,6 @@ footer p{ color:var(--text-faint); font-size:14px; margin:0; }
   .title-line{ display:none; }
   .edu-timeline{ margin-left:8px; padding-left:24px; }
   .edu-item::before{ left:-30px; }
-  .navbar{ padding:14px 0; }
   .dark-panel{ padding:36px 18px; }
 }
 
