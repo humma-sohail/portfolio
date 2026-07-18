@@ -1,3 +1,14 @@
+// Registers the service worker that makes the site installable as a PWA
+// (Add to Home Screen on phone, or Install app on desktop Chrome/Edge).
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {
+            // Non-fatal — the site still works fine without the service worker,
+            // it just won't be installable/offline-capable in that case.
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
         duration: 800,           // Speed of animation
