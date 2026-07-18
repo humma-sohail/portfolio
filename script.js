@@ -128,4 +128,4 @@ function typewriterEffect(selector, speed) {
     setTimeout(tick, 300);
 }
 
-console.log("%c👋 Theme loaded: mono / hot-pink.", "color: #4A0E2E; background:#FF6FB5; padding:2px 8px; border-radius:4px; font-size: 14px; font-weight: bold;");
+console.log("%c👋 Theme loaded: mono / matcha.", "color: #12240D; background:#C6E265; padding:2px 8px; border-radius:4px; font-size: 14px; font-weight: bold;");
