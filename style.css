@@ -197,6 +197,25 @@ a:hover{ color:var(--accent); }
 }
 .nav-link:hover{ color:var(--dark-text) !important; opacity:1; }
 
+.nav-icon-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  margin-left:12px;
+  border-radius:50%;
+  color:var(--accent);
+  opacity:.85;
+  transition:.25s;
+}
+.nav-icon-link:hover{
+  color:var(--accent-ink);
+  background:var(--accent);
+  opacity:1;
+  transform:translateY(-2px);
+}
+
 /* ---------------- HERO ---------------- */
 .hero-section{
   min-height:100vh;
