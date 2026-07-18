@@ -20,26 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     typewriterEffect(".hero-summary-text", 16);
     initVoiceIntro();
     initVideoModal();
-    initConfettiBurst();
 });
-
-// Plays the party-popper confetti flourish once, the first time it scrolls
-// into view, instead of every time (which would get old fast).
-function initConfettiBurst() {
-    var el = document.getElementById("confettiWrap");
-    if (!el || !("IntersectionObserver" in window)) return;
-
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                el.classList.add("in-view");
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    observer.observe(el);
-}
 
 // A plain, dependency-free lightbox for the EdBridgeLearn demo video — no
 // Bootstrap Modal JS involved, so there's nothing version/CDN-specific that
