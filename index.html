@@ -306,8 +306,7 @@
             <div class="pub-card">
               <div
                 class="pub-card-media pub-media-1"
-                data-bs-toggle="modal"
-                data-bs-target="#edbridgeVideoModal"
+                data-video-modal-open="edbridgeVideoModal"
                 role="button"
                 tabindex="0"
                 aria-label="Watch the EdBridgeLearn demo video"
@@ -337,8 +336,7 @@
                   <a
                     href="#"
                     class="link-dev"
-                    data-bs-toggle="modal"
-                    data-bs-target="#edbridgeVideoModal"
+                    data-video-modal-open="edbridgeVideoModal"
                     >watch_demo</a
                   >
                 </div>
@@ -410,16 +408,18 @@
         </div>
       </div>
 
-      <!-- EdBridgeLearn demo video modal -->
+      <!-- EdBridgeLearn demo video modal (plain custom lightbox, no Bootstrap JS dependency) -->
       <div
-        class="modal fade"
+        class="video-lightbox"
         id="edbridgeVideoModal"
-        tabindex="-1"
-        aria-labelledby="edbridgeVideoModalLabel"
         aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="edbridgeVideoModalLabel"
       >
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content video-modal-content">
+        <div class="video-lightbox-backdrop" data-video-modal-close></div>
+        <div class="video-lightbox-dialog">
+          <div class="video-modal-content">
             <div
               class="mockup-header d-flex align-items-center justify-content-between px-3"
               style="background-color: var(--dark-bg); height: 40px"
@@ -446,13 +446,15 @@
               </div>
               <button
                 type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="modal"
+                class="video-lightbox-close"
+                data-video-modal-close
                 aria-label="Close"
-              ></button>
+              >
+                &times;
+              </button>
             </div>
-            <div class="ratio ratio-16x9 bg-dark">
-              <video controls playsinline style="width:100%;height:100%;object-fit:contain;">
+            <div class="video-lightbox-frame bg-dark">
+              <video controls playsinline>
                 <source src="./blueprint.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

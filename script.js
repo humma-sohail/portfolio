@@ -11,36 +11,52 @@ document.addEventListener("DOMContentLoaded", function () {
     initVideoModal();
 });
 
-// Plays the EdBridgeLearn demo video only while its modal is open, and
-// resets/pauses it on close so it doesn't keep running in the background.
+// A plain, dependency-free lightbox for the EdBridgeLearn demo video — no
+// Bootstrap Modal JS involved, so there's nothing version/CDN-specific that
+// can silently keep the close button from working.
 function initVideoModal() {
     var modalEl = document.getElementById("edbridgeVideoModal");
     if (!modalEl) return;
     var video = modalEl.querySelector("video");
-    if (!video) return;
+    var openTriggers = document.querySelectorAll('[data-video-modal-open="edbridgeVideoModal"]');
+    var closeTriggers = modalEl.querySelectorAll("[data-video-modal-close]");
 
-    modalEl.addEventListener("shown.bs.modal", function () {
-        video.currentTime = 0;
-        video.play();
-    });
-    modalEl.addEventListener("hidden.bs.modal", function () {
-        video.pause();
-    });
+    function openModal() {
+        modalEl.classList.add("is-open");
+        modalEl.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        if (video) {
+            video.currentTime = 0;
+            video.play();
+        }
+    }
 
-    // Belt-and-braces close handling: bind the close button (and a plain
-    // Escape key fallback) directly to the Bootstrap Modal API, in case the
-    // data-bs-dismiss attribute alone doesn't trigger it for some reason.
-    var closeBtn = modalEl.querySelector('[data-bs-dismiss="modal"]');
     function closeModal() {
-        if (typeof bootstrap === "undefined" || !bootstrap.Modal) return;
-        var instance = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
-        instance.hide();
+        modalEl.classList.remove("is-open");
+        modalEl.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (video) video.pause();
     }
-    if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
-    }
+
+    openTriggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            openModal();
+        });
+        trigger.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openModal();
+            }
+        });
+    });
+
+    closeTriggers.forEach(function (trigger) {
+        trigger.addEventListener("click", closeModal);
+    });
+
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && modalEl.classList.contains("show")) {
+        if (e.key === "Escape" && modalEl.classList.contains("is-open")) {
             closeModal();
         }
     });
