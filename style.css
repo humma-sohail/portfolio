@@ -273,12 +273,14 @@ a:hover{ color:var(--accent); }
 
 /* photo+icons alone occupy roughly the first screen on mobile */
 @media (max-width:991px){
+  .hero-main{ align-items:flex-start; }
   .hero-grid-photo{
-    min-height:58vh;
+    min-height:68vh;
     display:flex;
     align-items:center;
     justify-content:center;
   }
+  .hero-grid-icons{ margin-bottom:24px; }
 }
 
 @media (min-width:992px){
