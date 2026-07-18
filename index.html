@@ -303,83 +303,8 @@
       <div class="container py-5">
         <div class="d-flex align-items-center gap-3 mb-5" data-aos="fade-up">
           <span class="eyebrow-pill">+ Projects</span>
-          <h2 class="section-title mb-0">02. Production Blueprints</h2>
+          <h2 class="section-title mb-0">02. Featured Projects</h2>
           <div class="title-line ms-4 flex-grow-1"></div>
-        </div>
-
-        <!-- Video Showcase Frame -->
-        <!-- Video Showcase Section Wrapper -->
-        <div class="row justify-content-center mb-5">
-          <div class="col-lg-10 mx-auto">
-            <div
-              class="video-mockup-container shadow-lg"
-              style="border-radius: 8px; overflow: hidden; margin-bottom: 40px"
-            >
-              <!-- Mockup Header Bar -->
-              <div
-                class="mockup-header d-flex align-items-center px-3"
-                style="background-color: var(--dark-bg); height: 40px"
-              >
-                <span
-                  class="dot red me-1"
-                  style="
-                    width: 12px;
-                    height: 12px;
-                    background-color: #ff5f56;
-                    border-radius: 50%;
-                    display: inline-block;
-                  "
-                ></span>
-                <span
-                  class="dot yellow me-1"
-                  style="
-                    width: 12px;
-                    height: 12px;
-                    background-color: #ffbd2e;
-                    border-radius: 50%;
-                    display: inline-block;
-                  "
-                ></span>
-                <span
-                  class="dot green"
-                  style="
-                    width: 12px;
-                    height: 12px;
-                    background-color: #27c93f;
-                    border-radius: 50%;
-                    display: inline-block;
-                  "
-                ></span>
-                <span
-                  class="mockup-title ms-3 text-mono small style"
-                  style="color: #a0a5a9; font-family: monospace"
-                  >edbridge_demo.mp4</span
-                >
-              </div>
-
-              <!-- Video Player Container (Fixed Aspect Ratio with Contain) -->
-              <div class="ratio ratio-16x9 bg-dark position-relative">
-                <video
-                  autoplay
-                  muted
-                  loop
-                  controls
-                  playsinline
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                  "
-                >
-                  <source src="./blueprint.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="row g-4">
@@ -389,25 +314,43 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="dev-card">
-              <div class="card-header-accent"></div>
-              <div class="dev-card-body">
-                <h3 class="project-title">EdBridgeLearn</h3>
+            <div class="pub-card">
+              <div
+                class="pub-card-media pub-media-1"
+                data-bs-toggle="modal"
+                data-bs-target="#edbridgeVideoModal"
+                role="button"
+                tabindex="0"
+                aria-label="Watch the EdBridgeLearn demo video"
+              >
+                <span class="pub-media-icon" aria-hidden="true">&#127891;</span>
+                <span class="pub-play-badge">&#9654; Watch Demo</span>
+              </div>
+              <div class="pub-card-body">
+                <div class="tech-stack-list mb-3">
+                  <span class="tech-tag">JavaScript</span
+                  ><span class="tech-tag">MongoDB</span
+                  ><span class="tech-tag">Node.js</span>
+                </div>
+                <h3 class="pub-title">EdBridgeLearn</h3>
                 <p class="project-desc">
                   A recommendation system for tracking international academic
                   programs and matching students to the right ones. Handles
                   session-based auth and the matching logic on a Node/MongoDB
                   backend.
                 </p>
-                <div class="tech-stack-list mb-4">
-                  <span class="tech-tag">JavaScript</span
-                  ><span class="tech-tag">MongoDB</span
-                  ><span class="tech-tag">Node.js</span>
-                </div>
-                <div class="card-action-links mt-auto">
-                  <a href="#" class="link-dev">view_source</a
-                  ><a href="#" class="link-dev disabled-link"
-                    >live_deployment</a
+                <div class="pub-meta">
+                  <span class="pub-avatar">HS</span>
+                  <span class="pub-meta-name">Humma Sohail</span>
+                  <span class="pub-meta-dot">&bull;</span>
+                  <a href="#" class="link-dev">view_source</a>
+                  <span class="pub-meta-dot">&bull;</span>
+                  <a
+                    href="#"
+                    class="link-dev"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edbridgeVideoModal"
+                    >watch_demo</a
                   >
                 </div>
               </div>
@@ -419,21 +362,26 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="dev-card">
-              <div class="card-header-accent"></div>
-              <div class="dev-card-body">
-                <h3 class="project-title">Image Prediction</h3>
+            <div class="pub-card">
+              <div class="pub-card-media pub-media-2">
+                <span class="pub-media-icon" aria-hidden="true">&#129504;</span>
+              </div>
+              <div class="pub-card-body">
+                <div class="tech-stack-list mb-3">
+                  <span class="tech-tag">Python</span
+                  ><span class="tech-tag">Flask</span
+                  ><span class="tech-tag">Inference Logic</span>
+                </div>
+                <h3 class="pub-title">Image Prediction</h3>
                 <p class="project-desc">
                   A small web app that sends an uploaded image to a Flask-served
                   ML model and returns a prediction. Built mostly to understand
                   how the client and the inference server talk to each other.
                 </p>
-                <div class="tech-stack-list mb-4">
-                  <span class="tech-tag">Python</span
-                  ><span class="tech-tag">Flask</span
-                  ><span class="tech-tag">Inference Logic</span>
-                </div>
-                <div class="card-action-links mt-auto">
+                <div class="pub-meta">
+                  <span class="pub-avatar">HS</span>
+                  <span class="pub-meta-name">Humma Sohail</span>
+                  <span class="pub-meta-dot">&bull;</span>
                   <a href="#" class="link-dev">view_source</a>
                 </div>
               </div>
@@ -445,24 +393,80 @@
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div class="dev-card">
-              <div class="card-header-accent"></div>
-              <div class="dev-card-body">
-                <h3 class="project-title">Simon Game Engine</h3>
+            <div class="pub-card">
+              <div class="pub-card-media pub-media-3">
+                <span class="pub-media-icon" aria-hidden="true">&#127918;</span>
+              </div>
+              <div class="pub-card-body">
+                <div class="tech-stack-list mb-3">
+                  <span class="tech-tag">JS</span
+                  ><span class="tech-tag">jQuery</span
+                  ><span class="tech-tag">CSS Transitions</span>
+                </div>
+                <h3 class="pub-title">Simon Game Engine</h3>
                 <p class="project-desc">
                   A browser version of the classic memory game — built without a
                   framework, mostly as an exercise in state tracking, timing,
                   and keeping the DOM in sync.
                 </p>
-                <div class="tech-stack-list mb-4">
-                  <span class="tech-tag">JS</span
-                  ><span class="tech-tag">jQuery</span
-                  ><span class="tech-tag">CSS Transitions</span>
-                </div>
-                <div class="card-action-links mt-auto">
+                <div class="pub-meta">
+                  <span class="pub-avatar">HS</span>
+                  <span class="pub-meta-name">Humma Sohail</span>
+                  <span class="pub-meta-dot">&bull;</span>
                   <a href="#" class="link-dev">launch_app</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EdBridgeLearn demo video modal -->
+      <div
+        class="modal fade"
+        id="edbridgeVideoModal"
+        tabindex="-1"
+        aria-labelledby="edbridgeVideoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content video-modal-content">
+            <div
+              class="mockup-header d-flex align-items-center justify-content-between px-3"
+              style="background-color: var(--dark-bg); height: 40px"
+            >
+              <div class="d-flex align-items-center">
+                <span
+                  class="dot red me-1"
+                  style="width:12px;height:12px;background-color:#ff5f56;border-radius:50%;display:inline-block;"
+                ></span>
+                <span
+                  class="dot yellow me-1"
+                  style="width:12px;height:12px;background-color:#ffbd2e;border-radius:50%;display:inline-block;"
+                ></span>
+                <span
+                  class="dot green"
+                  style="width:12px;height:12px;background-color:#27c93f;border-radius:50%;display:inline-block;"
+                ></span>
+                <span
+                  class="mockup-title ms-3 text-mono small"
+                  style="color:#a0a5a9;font-family:monospace;"
+                  id="edbridgeVideoModalLabel"
+                  >edbridge_demo.mp4</span
+                >
+              </div>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="ratio ratio-16x9 bg-dark">
+              <video controls playsinline style="width:100%;height:100%;object-fit:contain;">
+                <source src="./blueprint.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

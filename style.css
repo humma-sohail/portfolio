@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap');
 
 /* ---------------- ROOT / TOKENS ---------------- */
 :root{
@@ -306,7 +306,7 @@ a:hover{ color:var(--accent); }
 }
 
 .profile-name{
-  font-family:'Inter', sans-serif;
+  font-family:'Playfair Display', serif;
   font-weight:800;
   font-size:2.1rem;
   color:var(--ink);
@@ -512,6 +512,104 @@ section{ padding:110px 0; }
   border:1px solid var(--accent-deep);
 }
 .tech-tag:hover{ background:var(--dark-card); color:var(--accent); border-color:var(--accent); }
+
+/* ---------------- PUBLICATION-STYLE PROJECT CARDS ---------------- */
+.pub-card{
+  background:var(--surface);
+  border:1.5px solid var(--dark-border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:.28s ease;
+  box-shadow:var(--shadow-sm);
+}
+.pub-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent-line);
+  box-shadow:var(--shadow);
+}
+
+.pub-card-media{
+  position:relative;
+  aspect-ratio:16/9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.pub-media-icon{ font-size:3.4rem; filter:drop-shadow(0 6px 14px rgba(4,12,7,.45)); }
+
+.pub-media-1{ background:linear-gradient(135deg, #1d3a26, #4E8B2C); }
+.pub-media-2{ background:linear-gradient(135deg, #142b18, #7CB342); }
+.pub-media-3{ background:linear-gradient(135deg, #0e1f11, #9CCC3F); }
+
+.pub-card-media[data-bs-toggle="modal"]{ cursor:pointer; }
+.pub-play-badge{
+  position:absolute;
+  bottom:12px;
+  right:14px;
+  background:rgba(8,18,9,.75);
+  color:var(--accent);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;
+  font-weight:600;
+  padding:6px 12px;
+  border-radius:50px;
+  opacity:0;
+  transform:translateY(4px);
+  transition:.25s;
+}
+.pub-card:hover .pub-play-badge{ opacity:1; transform:translateY(0); }
+
+/* ---------------- VIDEO MODAL ---------------- */
+.video-modal-content{
+  background:var(--surface);
+  border:1px solid var(--dark-border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.modal-backdrop.show{ opacity:.75; background:var(--dark-bg); }
+
+.pub-card-body{ padding:24px; display:flex; flex-direction:column; flex:1; }
+
+.pub-title{
+  font-family:'Playfair Display', serif;
+  font-size:1.4rem;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:12px;
+  letter-spacing:-.2px;
+}
+
+.pub-meta{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid var(--dark-border);
+  font-size:.82rem;
+}
+.pub-avatar{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--accent-ink);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+.pub-meta-name{ color:var(--text-muted); font-weight:600; }
+.pub-meta-dot{ color:var(--text-faint); }
+.pub-meta .link-dev{ font-size:.82rem; margin-right:0; border-bottom:none; }
 
 /* ---------------- CARD LINKS ---------------- */
 .link-dev{
@@ -762,7 +860,7 @@ footer p{ color:var(--text-faint); font-size:14px; margin:0; }
   .profile-name{ font-size:1.8rem; }
   .hero-summary-text{ font-size:16px; }
   .section-title{ font-size:1.35rem; }
-  .dev-card, .tech-box, .network-card{ margin-bottom:22px; }
+  .dev-card, .tech-box, .network-card, .pub-card{ margin-bottom:22px; }
   .btn-custom-primary, .btn-custom-secondary{ width:100%; margin-bottom:15px; justify-content:center; }
   .title-line{ display:none; }
   .edu-timeline{ margin-left:8px; padding-left:24px; }

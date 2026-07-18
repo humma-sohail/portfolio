@@ -8,7 +8,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typewriterEffect(".hero-summary-text", 16);
     initVoiceIntro();
+    initVideoModal();
 });
+
+// Plays the EdBridgeLearn demo video only while its modal is open, and
+// resets/pauses it on close so it doesn't keep running in the background.
+function initVideoModal() {
+    var modalEl = document.getElementById("edbridgeVideoModal");
+    if (!modalEl) return;
+    var video = modalEl.querySelector("video");
+    if (!video) return;
+
+    modalEl.addEventListener("shown.bs.modal", function () {
+        video.currentTime = 0;
+        video.play();
+    });
+    modalEl.addEventListener("hidden.bs.modal", function () {
+        video.pause();
+    });
+}
 
 // Speaks a spoken-word intro aloud via the Web Speech API, preferring a
 // female system voice, and toggles off if clicked again mid-speech.
