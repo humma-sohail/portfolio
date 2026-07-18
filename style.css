@@ -43,6 +43,7 @@
   --radius: 20px;
   --shadow: 0 18px 40px -12px rgba(4,12,7,.45);
   --shadow-sm: 0 6px 18px -8px rgba(4,12,7,.32);
+  --nav-height: 60px;
 }
 
 /* ---------------- RESET ---------------- */
@@ -171,7 +172,10 @@ a:hover{ color:var(--accent); }
 
 /* ---------------- NAVBAR ---------------- */
 .navbar{
-  padding:18px 0;
+  min-height:var(--nav-height);
+  display:flex;
+  align-items:center;
+  padding:8px 0;
   background:rgba(8,18,9,.6);
   border-bottom:1px solid var(--dark-border);
 }
@@ -185,13 +189,13 @@ a:hover{ color:var(--accent); }
   text-transform:uppercase;
 }
 
-.nav-social-links{ gap:10px; }
+.nav-social-links{ gap:8px; }
 .nav-icon-link{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:36px;
-  height:36px;
+  width:32px;
+  height:32px;
   border-radius:50%;
   color:var(--accent);
   opacity:.85;
@@ -206,10 +210,12 @@ a:hover{ color:var(--accent); }
 
 /* ---------------- HERO ---------------- */
 .hero-section{
-  min-height:100vh;
+  /* subtract the navbar's own height so hero + navbar together fill exactly
+     one viewport — otherwise the footer marquee gets pushed past the fold */
+  min-height:calc(100vh - var(--nav-height));
   display:flex;
   flex-direction:column;
-  padding-top:clamp(48px, 9vh, 110px);
+  padding-top:clamp(32px, 6vh, 80px);
   overflow:hidden;
   background:radial-gradient(ellipse 90% 65% at 50% 25%, #234a26 0%, #12291a 55%, var(--bg) 100%);
 }
