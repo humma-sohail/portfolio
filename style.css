@@ -2,43 +2,43 @@
 
 /* ---------------- ROOT / TOKENS ---------------- */
 :root{
-  /* surfaces — clean white canvas, black ink, neon lime accent */
+  /* surfaces — clean white canvas, deep-wine ink, hot pink accent (no black anywhere) */
   --bg:            #FFFFFF;
-  --bg-soft:       #F4F4F2;   /* subtle off-white wash for alt sections */
+  --bg-soft:       #FFF3F8;   /* subtle pink-white wash for alt sections */
   --surface:       #FFFFFF;   /* cards on light sections */
-  --surface-hover: #FAFAF8;
+  --surface-hover: #FFF6FA;
 
   /* aliases so existing inline styles keep working */
   --bg-card:       var(--surface);
   --border-color:  var(--border);
 
-  --border:        #E3E3E0;
-  --border-strong: #111111;
+  --border:        #F3D9E7;
+  --border-strong: #4A0E2E;
 
-  /* ink */
-  --ink:           #0A0A0A;   /* near-black */
-  --text:          #1C1C1A;
-  --text-muted:    #55554F;
-  --text-faint:    #8C8C85;
+  /* ink — deep wine instead of black, keeps contrast without touching black */
+  --ink:           #4A0E2E;
+  --text:          #5C1A38;
+  --text-muted:    #83506A;
+  --text-faint:    #B084A0;
 
-  /* signature accent — neon lime, the whole identity of this palette */
-  --accent:        #D6FF3F;
-  --accent-deep:   #B7E619;
-  --accent-ink:    #0A0A0A;  /* text color used ON TOP of accent */
-  --accent-soft:   rgba(214,255,63,.16);
-  --accent-line:   rgba(214,255,63,.55);
+  /* signature accent — hot pink, the whole identity of this palette */
+  --accent:        #FF6FB5;
+  --accent-deep:   #E23E90;
+  --accent-ink:    #4A0E2E;  /* text color used ON TOP of accent */
+  --accent-soft:   rgba(255,111,181,.16);
+  --accent-line:   rgba(255,111,181,.55);
 
-  /* dark panels (the black "why choose me" / process blocks) */
-  --dark-bg:       #0A0A0A;
-  --dark-card:     #161616;
-  --dark-card-alt: #1E1E1E;
-  --dark-border:   #2B2B2B;
-  --dark-text:     #F2F2EE;
-  --dark-text-muted: #A6A69E;
+  /* dark panels (deep wine/magenta, standing in for the old black blocks) */
+  --dark-bg:       #2B0A1D;
+  --dark-card:     #3A1027;
+  --dark-card-alt: #481432;
+  --dark-border:   #63234A;
+  --dark-text:     #FCEFF6;
+  --dark-text-muted: #E4AFCB;
 
   --radius: 20px;
-  --shadow: 0 18px 40px -12px rgba(10,10,10,.16);
-  --shadow-sm: 0 6px 18px -8px rgba(10,10,10,.10);
+  --shadow: 0 18px 40px -12px rgba(74,14,46,.20);
+  --shadow-sm: 0 6px 18px -8px rgba(74,14,46,.12);
 }
 
 /* ---------------- RESET ---------------- */
@@ -95,8 +95,8 @@ input:focus-visible{
   pointer-events:none;
   z-index:0;
 }
-.ambient-glow-1{ top:-160px; right:-140px; background:radial-gradient(circle, rgba(214,255,63,.55), transparent 70%); }
-.ambient-glow-2{ bottom:8%; left:-180px; background:radial-gradient(circle, rgba(214,255,63,.30), transparent 70%); }
+.ambient-glow-1{ top:-160px; right:-140px; background:radial-gradient(circle, rgba(255,111,181,.55), transparent 70%); }
+.ambient-glow-2{ bottom:8%; left:-180px; background:radial-gradient(circle, rgba(255,111,181,.30), transparent 70%); }
 
 /* Ensure real content sits above the ambient layers */
 .navbar, header, section, footer{ position:relative; z-index:1; }
@@ -124,7 +124,7 @@ p{ color:var(--text-muted); font-size:16px; }
 
 .small{ color:var(--text-faint); }
 
-/* highlight boxes — the signature "black pill around a keyword" treatment */
+/* highlight boxes — the signature "solid pill around a keyword" treatment */
 .highlight{
   background:var(--ink);
   color:#fff;
@@ -197,6 +197,63 @@ a:hover{ color:var(--ink); }
   display:flex;
   align-items:center;
   padding-top:20px;
+  overflow:hidden;
+}
+
+/* ---------------- HERO SMOKE (animated pink haze, first page only) ---------------- */
+.hero-smoke{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+}
+.hero-smoke span{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(75px);
+  will-change:transform;
+}
+.hero-smoke span:nth-child(1){
+  width:560px; height:560px;
+  top:-140px; left:-100px;
+  background:radial-gradient(circle, rgba(255,111,181,.60), transparent 70%);
+  animation:smoke-drift-a 24s ease-in-out infinite;
+}
+.hero-smoke span:nth-child(2){
+  width:480px; height:480px;
+  top:10%; right:-160px;
+  background:radial-gradient(circle, rgba(255,111,181,.45), transparent 70%);
+  animation:smoke-drift-b 28s ease-in-out infinite;
+}
+.hero-smoke span:nth-child(3){
+  width:420px; height:420px;
+  bottom:-160px; left:22%;
+  background:radial-gradient(circle, rgba(255,143,197,.42), transparent 70%);
+  animation:smoke-drift-c 32s ease-in-out infinite;
+}
+.hero-smoke span:nth-child(4){
+  width:340px; height:340px;
+  top:35%; left:48%;
+  background:radial-gradient(circle, rgba(255,111,181,.30), transparent 70%);
+  animation:smoke-drift-a 20s ease-in-out infinite reverse;
+}
+
+@keyframes smoke-drift-a{
+  0%,100%{ transform:translate(0,0) scale(1) rotate(0deg); }
+  50%{ transform:translate(6%,5%) scale(1.18) rotate(12deg); }
+}
+@keyframes smoke-drift-b{
+  0%,100%{ transform:translate(0,0) scale(1) rotate(0deg); }
+  50%{ transform:translate(-7%,4%) scale(1.12) rotate(-10deg); }
+}
+@keyframes smoke-drift-c{
+  0%,100%{ transform:translate(0,0) scale(1) rotate(0deg); }
+  50%{ transform:translate(4%,-6%) scale(1.2) rotate(8deg); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-smoke span{ animation:none !important; }
 }
 
 .hero-title{
@@ -213,6 +270,7 @@ a:hover{ color:var(--ink); }
 .hero-title .highlight.pill-pending,
 .hero-title .highlight-lime.pill-pending{
   padding:0 !important;
+  border-width:0 !important;
 }
 
 .typing-cursor{
@@ -414,7 +472,7 @@ section{ padding:110px 0; }
   box-shadow:var(--shadow);
 }
 
-.mockup-title{ color:#cfd6d1; font-size:.85rem; }
+.mockup-title{ color:var(--dark-text-muted); font-size:.85rem; }
 
 /* ---------------- DARK PANEL (Why Choose Me / process block) ---------------- */
 .dark-panel{
@@ -432,7 +490,7 @@ section{ padding:110px 0; }
   filter:blur(120px);
   opacity:.5;
   top:-120px; right:-100px;
-  background:radial-gradient(circle, rgba(214,255,63,.6), transparent 70%);
+  background:radial-gradient(circle, rgba(255,111,181,.6), transparent 70%);
   pointer-events:none;
 }
 .dark-panel .eyebrow-pill{
