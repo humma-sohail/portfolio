@@ -7,7 +7,76 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     typewriterEffect(".hero-title", 28);
+    initVoiceIntro();
 });
+
+// Speaks a spoken-word intro aloud via the Web Speech API, preferring a
+// female system voice, and toggles off if clicked again mid-speech.
+function initVoiceIntro() {
+    var INTRO_TEXT =
+        "I am Humma Sohail, a Computer Science student at the University of " +
+        "Central Punjab with a strong interest in full-stack web development. " +
+        "I have hands-on experience building web applications using JavaScript, " +
+        "Node.js, Express.js, MongoDB, and REST APIs. I am also an AWS Certified " +
+        "Cloud Practitioner and enjoy learning new technologies. I am a quick " +
+        "learner, a team player, and always eager to improve my skills.";
+
+    var btn = document.getElementById("voiceIntroBtn");
+    var icon = btn ? btn.querySelector(".voice-icon") : null;
+    if (!btn || !("speechSynthesis" in window)) {
+        if (btn) btn.style.display = "none";
+        return;
+    }
+
+    var voices = [];
+    function loadVoices() {
+        voices = window.speechSynthesis.getVoices();
+    }
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+
+    var FEMALE_HINTS = [
+        "female", "zira", "samantha", "victoria", "susan", "karen",
+        "tessa", "moira", "fiona", "aria", "jenny", "google uk english female",
+        "google us english"
+    ];
+
+    function pickFemaleVoice() {
+        var byHint = voices.find(function (v) {
+            var n = v.name.toLowerCase();
+            return FEMALE_HINTS.some(function (hint) { return n.indexOf(hint) !== -1; });
+        });
+        if (byHint) return byHint;
+        var english = voices.find(function (v) { return v.lang && v.lang.indexOf("en") === 0; });
+        return english || voices[0] || null;
+    }
+
+    function setSpeakingState(isSpeaking) {
+        btn.classList.toggle("is-speaking", isSpeaking);
+        btn.setAttribute("aria-label", isSpeaking ? "Stop voice introduction" : "Play voice introduction");
+        if (icon) icon.innerHTML = isSpeaking ? "&#9209;" : "&#128264;";
+    }
+
+    btn.addEventListener("click", function () {
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+            setSpeakingState(false);
+            return;
+        }
+
+        var utterance = new SpeechSynthesisUtterance(INTRO_TEXT);
+        var voice = pickFemaleVoice();
+        if (voice) utterance.voice = voice;
+        utterance.pitch = 1.05;
+        utterance.rate = 1;
+        utterance.onstart = function () { setSpeakingState(true); };
+        utterance.onend = function () { setSpeakingState(false); };
+        utterance.onerror = function () { setSpeakingState(false); };
+
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+    });
+}
 
 // Types out the hero title one character at a time, in document order,
 // so the .highlight / .highlight-lime pill boxes grow along with their text.

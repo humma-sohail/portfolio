@@ -647,6 +647,58 @@ video{ display:block; width:100%; height:auto; }
 footer{ border-top:1px solid var(--border); padding:30px 0; text-align:center; }
 footer p{ color:var(--text-faint); font-size:14px; margin:0; }
 
+/* ---------------- VOICE INTRO BUTTON ---------------- */
+.voice-intro-btn{
+  position:fixed;
+  right:28px;
+  bottom:28px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:none;
+  background:var(--accent);
+  color:var(--ink);
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  z-index:1000;
+  transition:.25s;
+}
+.voice-intro-btn:hover{
+  background:var(--accent-deep);
+  transform:translateY(-4px) scale(1.05);
+}
+.voice-intro-btn:active{ transform:scale(.96); }
+
+.voice-intro-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  box-shadow:0 0 0 0 var(--accent-line);
+  opacity:0;
+}
+.voice-intro-btn.is-speaking::after{
+  animation:voice-pulse 1.4s ease-out infinite;
+}
+.voice-intro-btn.is-speaking{ background:var(--accent-deep); }
+
+@keyframes voice-pulse{
+  0%{ box-shadow:0 0 0 0 var(--accent-line); opacity:.9; }
+  100%{ box-shadow:0 0 0 22px rgba(255,111,181,0); opacity:0; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .voice-intro-btn.is-speaking::after{ animation:none; }
+}
+
+@media (max-width:576px){
+  .voice-intro-btn{ right:18px; bottom:18px; width:52px; height:52px; font-size:1.3rem; }
+}
+
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
