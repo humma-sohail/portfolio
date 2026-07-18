@@ -564,6 +564,16 @@ section{ padding:110px 0; }
   border-radius:14px;
   overflow:hidden;
 }
+.video-modal-content .btn-close{
+  position:relative;
+  z-index:5;
+  width:1.4em;
+  height:1.4em;
+  padding:0;
+  opacity:.9;
+  cursor:pointer;
+}
+.video-modal-content .btn-close:hover{ opacity:1; transform:scale(1.1); }
 .modal-backdrop.show{ opacity:.75; background:var(--dark-bg); }
 
 .pub-card-body{ padding:24px; display:flex; flex-direction:column; flex:1; }

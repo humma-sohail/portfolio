@@ -26,6 +26,24 @@ function initVideoModal() {
     modalEl.addEventListener("hidden.bs.modal", function () {
         video.pause();
     });
+
+    // Belt-and-braces close handling: bind the close button (and a plain
+    // Escape key fallback) directly to the Bootstrap Modal API, in case the
+    // data-bs-dismiss attribute alone doesn't trigger it for some reason.
+    var closeBtn = modalEl.querySelector('[data-bs-dismiss="modal"]');
+    function closeModal() {
+        if (typeof bootstrap === "undefined" || !bootstrap.Modal) return;
+        var instance = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
+        instance.hide();
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modalEl.classList.contains("show")) {
+            closeModal();
+        }
+    });
 }
 
 // Speaks a spoken-word intro aloud via the Web Speech API, preferring a
