@@ -47,7 +47,7 @@
 
 /* ---------------- RESET ---------------- */
 *{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; max-width:100%; }
 
 body{
   font-family:'Inter',sans-serif;
@@ -286,9 +286,12 @@ a:hover{ color:var(--accent); }
 /* ---------------- HERO PROFILE CARD ---------------- */
 .profile-photo-frame{
   /* scales with viewport height so short/unmaximized windows never push
-     the name/role/socials below the row's own bottom edge */
-  width:clamp(200px, 38vh, 460px);
-  height:clamp(200px, 38vh, 460px);
+     the name/role/socials below the row's own bottom edge — bounded by
+     vw too (via min()) so it can never force horizontal overflow on a
+     narrow, tall phone screen */
+  width:clamp(200px, min(38vh, 70vw), 460px);
+  height:clamp(200px, min(38vh, 70vw), 460px);
+  max-width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
