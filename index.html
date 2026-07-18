@@ -89,33 +89,87 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero-section d-flex align-items-center position-relative">
+    <header class="hero-section position-relative">
       <div class="hero-smoke" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
       </div>
       <div class="container" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="hero-title">
-          I build <span class="highlight">scalable backend logic</span> and
-          integrate responsive <span class="highlight-lime">client-side</span>
-          applications.
-        </h1>
-        <p class="hero-subtitle mt-4">
-          I'm <span class="text-white fw-semibold">Humma Sohail</span>, a full
-          stack software engineer. I like projects where the backend logic is
-          just as interesting as the interface, and I try to keep both sides
-          clean and easy to reason about.
-        </p>
-        <div class="mt-5">
-          <a href="#projects" class="btn btn-custom-primary me-3"
-            ><span class="btn-icon-circle">&rarr;</span>Explore Projects</a
-          >
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Regarding%20EdBridge%20/%20Portfolio%20Inquiry"
-            target="_blank"
-            class="btn btn-custom-secondary text-mono"
-          >
-            <span class="btn-icon-circle">@</span>get_in_touch()
-          </a>
+        <div class="row align-items-center g-5">
+          <!-- Profile column -->
+          <div class="col-lg-4 text-center text-lg-start">
+            <div class="profile-photo-frame mx-auto mx-lg-0" aria-label="Profile photo placeholder">
+              <svg viewBox="0 0 24 24" width="72" height="72" fill="currentColor" aria-hidden="true">
+                <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+              </svg>
+            </div>
+            <h2 class="profile-name">Humma Sohail</h2>
+            <p class="profile-role">Full Stack Software Engineer</p>
+            <p class="profile-org">University of Central Punjab</p>
+            <div class="social-links justify-content-center justify-content-lg-start">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Regarding%20EdBridge%20/%20Portfolio%20Inquiry"
+                target="_blank"
+                aria-label="Email"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5 7.8 6.2L19.8 6H4.2zM20 8.1l-7.4 5.9a1 1 0 0 1-1.2 0L4 8.1V18h16V8.1z"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/humma-sohail-80272130b/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Humma123"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Professional summary column -->
+          <div class="col-lg-8">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="section-icon-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM9 15H5v-1c0-1.1 1.34-2 3-2s3 .9 3 2v1zm-2-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm10 3h-6v-1.5h6V14zm0-3h-6V9.5h6V11z"/>
+                </svg>
+              </span>
+              <h2 class="section-title mb-0">Professional Summary</h2>
+            </div>
+            <p class="hero-summary-text">
+              I build
+              <span class="highlight">scalable, full-stack web applications</span>
+              from front to back. I'm a Computer Science student at the
+              University of Central Punjab with hands-on experience across
+              JavaScript, Node.js, Express.js, MongoDB, and REST APIs, and I
+              hold the
+              <span class="highlight-lime">AWS Certified Cloud Practitioner</span>
+              certification. I'm a quick learner and a dependable team player,
+              always looking to deepen my skills and take on new technologies.
+            </p>
+            <div class="mt-4">
+              <a href="#projects" class="btn btn-custom-primary me-3"
+                ><span class="btn-icon-circle">&rarr;</span>Explore Projects</a
+              >
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Regarding%20EdBridge%20/%20Portfolio%20Inquiry"
+                target="_blank"
+                class="btn btn-custom-secondary text-mono"
+              >
+                <span class="btn-icon-circle">@</span>get_in_touch()
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -542,36 +596,6 @@
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT FOOTER -->
-    <section
-      id="contact"
-      class="py-5 border-top border-dark-subtle bg-darker position-relative"
-    >
-      <div class="container py-5" data-aos="fade-up">
-        <div class="row">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <span class="eyebrow-pill mb-3 d-inline-flex">+ Connect</span>
-            <h2 class="section-title mb-3 mt-3">05. Connect</h2>
-            <p class="project-desc">
-              Open to full stack roles, freelance work, or just a good technical
-              conversation. Reach out anytime.
-            </p>
-          </div>
-          <div
-            class="col-lg-6 text-start text-lg-end d-flex flex-column justify-content-center align-items-lg-end mt-3 mt-lg-0"
-          >
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=hummasohail4@gmail.com&su=Portfolio%20Inquiry"
-              target="_blank"
-              class="btn btn-custom-primary text-mono w-sm-100"
-            >
-              <span class="btn-icon-circle">&rarr;</span>sys.contact("hummasohail4@gmail.com")
-            </a>
           </div>
         </div>
       </div>

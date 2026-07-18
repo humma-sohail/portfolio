@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         offset: 100              // Distance from viewport element activation
     });
 
-    typewriterEffect(".hero-title", 28);
+    typewriterEffect(".hero-summary-text", 16);
     initVoiceIntro();
 });
 
