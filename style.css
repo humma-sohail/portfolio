@@ -1034,41 +1034,287 @@ footer p{ color:var(--text-faint); font-size:14px; margin:0; }
 }
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE (UPDATED FOR PERFECT HERO & CONNECT LAYOUT)
 ========================================================== */
-@media (max-width:992px){
-  .hero-section{ padding-top:60px; }
-  .hero-summary-text{ margin:auto; margin-bottom:10px; }
-  .section-title{ font-size:1.5rem; }
-  .dark-panel{ padding:48px 24px; border-radius:24px; }
+@media (max-width: 992px) {
+  /* Photo wrapper div ki mechanical height aur extra vertical spacing ko tight karne ke liye */
+  .hero-grid-photo {
+    height: auto !important;
+    min-height: auto !important;
+    line-height: 1 !important;
+    margin-bottom: 5px !important; /* Image ke exact neeche buttons ko close lane ke liye */
+    padding: 0 !important;
+  }
+
+  /* Frame ke upar aur neeche jo default display block browser elements margin lete hain usko zero kiya */
+  .profile-photo-frame {
+    width: 150px !important;
+    height: 150px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important; /* Clear vertical extra spacing layout bugs */
+  }
+
+  /* Identity Div ko mazeed upar push karne aur automatic space control ke liye */
+  .hero-grid-identity {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
 
-@media (max-width:768px){
-  section{ padding:80px 0; }
-  .profile-name{ font-size:1.8rem; }
-  .hero-summary-text{ font-size:16px; }
-  .section-title{ font-size:1.35rem; }
-  .dev-card, .tech-box, .network-card, .pub-card{ margin-bottom:22px; }
-  .btn-custom-primary, .btn-custom-secondary{ width:100%; margin-bottom:15px; justify-content:center; }
-  .title-line{ display:none; }
-  .edu-timeline{ margin-left:8px; padding-left:24px; }
-  .edu-item::before{ left:-30px; }
-  .dark-panel{ padding:36px 18px; }
+@media (max-width: 576px) {
+  /* Chote mobile screens par mazeed perfect tightness */
+  .profile-photo-frame {
+    width: 125px !important;
+    height: 125px !important;
+  }
+  
+  .hero-grid-photo {
+    margin-bottom: 2px !important;
+  }
 }
 
-@media (max-width:576px){
-  .container{ padding-left:18px; padding-right:18px; }
-  .profile-name{ font-size:1.6rem; }
-  .hero-summary-text{ font-size:15px; }
-  .project-title{ font-size:20px; }
-  .edu-title{ font-size:1.2rem; }
+@media (max-width: 768px) {
+  section { 
+    padding: 60px 0; /* General sections padding optimized */
+  }
+  
+  .profile-name { 
+    font-size: 1.8rem; 
+    margin-top: 10px !important;
+  }
+  
+  .hero-summary-text { 
+    font-size: 16px; 
+  }
+  
+  .section-title { 
+    font-size: 1.35rem; 
+  }
+  
+  .dev-card, .tech-box, .network-card, .pub-card { 
+    margin-bottom: 22px; 
+  }
+  
+  .btn-custom-primary, .btn-custom-secondary { 
+    width: 100%; 
+    margin-bottom: 15px; 
+    justify-content: center; 
+  }
+  
+  .title-line, .section-header-line::after { 
+    display: none !important; /* Lines removed for cleaner mobile layout */
+  }
+  
+  .edu-timeline { 
+    margin-left: 8px; 
+    padding-left: 24px; 
+  }
+  
+  .edu-item::before { 
+    left: -30px; 
+  }
+  
+  .dark-panel { 
+    padding: 36px 18px; 
+  }
+}
 
-  /* the vh/vw-based sizing was tuned for short desktop windows — on a tall
-     phone it renders far too large, so cap it to something compact here.
-     It's a bit bigger than before since the photo now gets its own
-     dedicated first screen instead of sharing space with the name/title. */
-  .profile-photo-frame{ width:230px; height:230px; }
-  .profile-name{ margin-top:16px; }
-  .hero-section{ padding-top:24px; }
-  .hero-tech-footer{ padding-top:16px; padding-bottom:28px; }
+@media (max-width: 576px) {
+  .container { 
+    padding-left: 18px; 
+    padding-right: 18px; 
+  }
+  
+  /* Text styles adjusted so they fit without breaking layout */
+  .profile-name { 
+    font-size: 1.5rem !important; 
+    margin-top: 8px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .hero-summary-text { 
+    font-size: 14px; 
+  }
+  
+  .project-title { 
+    font-size: 20px; 
+  }
+  
+  .edu-title { 
+    font-size: 1.2rem; 
+  }
+
+  /* Exact image size tuning for small mobiles to keep intro on screen */
+  .hero-avatar-img, .profile-photo-frame { 
+    width: 170px !important; 
+    height: 170px !important; 
+    max-height: 170px !important;
+  }
+  
+  .hero-section { 
+    padding-top: 10px !important; 
+  }
+  
+  .hero-tech-footer { 
+    padding-top: 12px; 
+    padding-bottom: 20px; 
+  }
+
+  /* 04. Let's Connect Heading Mobile Wrap Fix */
+  .section-header-line {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  
+  .section-title-tech {
+    font-size: 1.5rem !important;
+  }
+
+  /* Active / Public Badges safe layout padding inside card */
+  .tech-card {
+    padding: 20px !important;
+  }
+
+  .tech-command-pill {
+    font-size: 0.72rem !important;
+    padding: 4px 8px !important;
+  }
+
+  .tech-status-badge {
+    font-size: 0.65rem !important;
+    padding: 3px 8px !important;
+    white-space: nowrap; /* Prevent breaking outside borders */
+  }
+}
+/* ---------------- CODE TERMINAL THEME (LET'S CONNECT) ---------------- */
+
+/* Main Header Elements */
+.badge-connect {
+  background-color: #C6E265;
+  color: #0E2013;
+  font-family: 'Space Mono', monospace, sans-serif;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.section-title-tech {
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Horizontal alignment line extension */
+.section-header-line {
+  position: relative;
+  width: 100%;
+}
+.section-header-line::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(198, 226, 101, 0.2);
+  margin-left: 15px;
+}
+
+/* Card Container Base styling */
+.tech-card {
+  background-color: rgba(14, 32, 19, 0.6); /* Translucent Forest Green */
+  border: 1px solid rgba(198, 226, 101, 0.15);
+  border-radius: 24px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tech-card:hover {
+  border-color: rgba(198, 226, 101, 0.4);
+  box-shadow: 0 10px 30px rgba(14, 32, 19, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Inner elements: Top Row */
+.tech-icon-circle {
+  color: #C6E265;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-command-pill {
+  background-color: #C6E265;
+  color: #0E2013;
+  font-family: 'Space Mono', monospace, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  letter-spacing: -0.2px;
+}
+
+/* Active / Public Badges */
+.tech-status-badge {
+  font-family: 'Space Mono', monospace, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.status-active {
+  background-color: rgba(198, 226, 101, 0.1);
+  color: #C6E265;
+  border: 1px solid rgba(198, 226, 101, 0.2);
+}
+
+.status-public {
+  background-color: #C6E265;
+  color: #0E2013;
+}
+
+/* Text elements inside card */
+.tech-card-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.tech-card-desc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Bottom Action Link Button */
+.tech-action-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: 1px solid rgba(198, 226, 101, 0.25);
+  color: #ffffff;
+  font-family: 'Space Mono', monospace, sans-serif;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.tech-action-btn:hover {
+  background-color: #C6E265;
+  color: #0E2013;
+  border-color: #C6E265;
+}
+
+.arrow-diagonal {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.85rem;
 }
